@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>Vue</title>
+</head>
+
+<body>
+    <div id="js-app" v-on:mousemove="mPosition($event)">
+        {{message}}
+        <br>
+        <button v-on:click="changeText">Say Hi</button>
+        <input v-model="message">
+        <hr>
+        <p>note examen array</p>
+        <ul>
+            <li v-for="nota in note">
+                {{ nota.nota }}
+            </li>
+        </ul>
+
+        <hr>
+        <p>Note examen obj</p>
+        <ul>
+            <li v-for="(value, key) in noteObj">
+                {{key+1}} . {{ value.firstName }}, {{ value.nota}}
+            </li>
+        </ul>
+        <hr>
+        <span>
+            {{ sayHello() }}
+        </span>
+        <hr>
+        <a v-bind:href="link">google</a>
+        <hr>
+        <p v-once>{{message}}</p>
+        <hr>
+        <p v-html="fullhref"></p>
+        <hr>
+        <p>Coords {{ x }} and {{ y }}</p>
+        <hr>        
+          <input type="text" v-on:keyup="alertMe($event)">
+    </div>
+    <hr>
+    <div id="exercise">
+        <p>Exercise</p>
+        1) {{ name}}, {{ age }}<br>
+        2) {{ age * 3}}<br>
+        3) <p v-once>{{ randomFloat() }}</p><br>
+        4) <p v-html="img"></p><br>
+        5) <input v-model="text"> {{ text }}<br>
+        6) {{ counter }} <button v-on:click="incrementValue">add</button><button v-on:click="decrementValue">minus</button> <input v-model="adder">
+    </div>
+<hr>
+    <div id ="exercise2">
+        <p>Tema1</p>
+        <div> 
+           1) <button v-on:click="alert">Show alert </button>
+        </div>
+        <div>
+               
+         2)<input  type="text" v-on:keydown="keydown">
+         <p>{{ value}}</p>
+
+
+        </div>
+        <div>
+               
+                3)<input  type="text" v-on:keydown.ENTER="keydown">
+                <p>{{ value}}</p>
+       
+       
+               </div>
+        
+    </div>
+
+    <script src="dist/main.js"></script>
+</body>
+
+</html>
