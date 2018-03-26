@@ -4,7 +4,9 @@ const $ = require('jquery');
 
 global.$ = global.jQuery = $;
 
+require("../scss/main.scss");
 require('bootstrap');
+require('bootstrap/dist/css/bootstrap.css');
 
 var exercise = new Vue({
     el: '#exercise',
